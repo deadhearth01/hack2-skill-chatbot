@@ -61,12 +61,12 @@ const Index = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen max-w-4xl mx-auto p-4 bg-gradient-to-br from-purple-900 via-blue-900 to-purple-900">
-      <div className="flex justify-between items-center mb-6 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">AI Chat Assistant</h1>
+    <div className="flex flex-col h-screen max-w-4xl mx-auto p-4 bg-gradient-to-br from-[#1A1F2C] via-[#221F26] to-[#1A1F2C]">
+      <div className="flex justify-between items-center mb-6 p-4 rounded-lg bg-black/20 backdrop-blur-sm border border-white/10">
+        <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Hack2Skill Chat Bot</h1>
       </div>
       
-      <div className="flex-1 overflow-y-auto messages-container mb-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 p-4">
+      <div className="flex-1 overflow-y-auto messages-container mb-4 rounded-lg bg-black/20 backdrop-blur-sm border border-white/10 p-4">
         <div className="flex flex-col">
           {messages.map((message, index) => (
             <ChatMessage
@@ -79,7 +79,7 @@ const Index = () => {
         </div>
       </div>
 
-      <div className="sticky bottom-0 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 p-4">
+      <div className="sticky bottom-0 bg-black/20 backdrop-blur-sm rounded-lg border border-white/10 p-4">
         <ChatInput onSend={handleSendMessage} disabled={isLoading} />
       </div>
     </div>
