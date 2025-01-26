@@ -33,11 +33,15 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend, disabled }) => {
         onChange={(e) => setMessage(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="Type your message..."
-        className="resize-none"
+        className="resize-none bg-white/5 border-white/20 text-white placeholder:text-purple-200"
         rows={1}
         disabled={disabled}
       />
-      <Button type="submit" disabled={disabled || !message.trim()}>
+      <Button 
+        type="submit" 
+        disabled={disabled || !message.trim()}
+        className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600"
+      >
         <SendHorizontal className="h-5 w-5" />
       </Button>
     </form>

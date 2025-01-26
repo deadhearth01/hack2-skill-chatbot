@@ -27,9 +27,13 @@
   }
 }
 
+body {
+  @apply bg-gradient-to-br from-purple-900 via-blue-900 to-purple-900 min-h-screen text-white;
+}
+
 .messages-container {
   scrollbar-width: thin;
-  scrollbar-color: hsl(var(--primary)) transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
 .messages-container::-webkit-scrollbar {
@@ -41,15 +45,12 @@
 }
 
 .messages-container::-webkit-scrollbar-thumb {
-  background-color: hsl(var(--primary));
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
 }
 
 @layer base {
   * {
     @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }

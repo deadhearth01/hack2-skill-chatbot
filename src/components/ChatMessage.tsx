@@ -13,15 +13,17 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isBot }) => {
   return (
     <div
       className={cn(
-        "py-3 px-4 rounded-lg max-w-[85%] mb-4",
-        isBot ? "bg-secondary self-start" : "bg-primary text-primary-foreground self-end"
+        "py-3 px-4 rounded-lg max-w-[85%] mb-4 backdrop-blur-sm",
+        isBot 
+          ? "bg-white/10 border border-white/20 self-start text-purple-100" 
+          : "bg-gradient-to-r from-purple-500 to-blue-500 self-end text-white"
       )}
     >
       <ReactMarkdown
         components={{
-          code({ node, inline, className, children, ...props }) {
+          code({ className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '');
-            return !inline && match ? (
+            return match ? (
               <SyntaxHighlighter
                 style={vscDarkPlus}
                 language={match[1]}
@@ -31,7 +33,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isBot }) => {
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlighter>
             ) : (
-              <code className={cn("bg-muted px-1 py-0.5 rounded", className)} {...props}>
+              <code className={cn("bg-black/30 px-1 py-0.5 rounded", className)} {...props}>
                 {children}
               </code>
             );
